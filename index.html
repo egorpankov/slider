@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Slid3r</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8"> </head>
+    <link rel="shortcut icon" href="face.ico">
+
+<body>
+    <div class="all">
+        <input checked type="radio" name="respond" id="desktop">
+        <article id="slider">
+            <input checked type="radio" name="slider" id="switch1">
+            <input type="radio" name="slider" id="switch2">
+            <input type="radio" name="slider" id="switch3">
+            <input type="radio" name="slider" id="switch4">
+            <input type="radio" name="slider" id="switch5">
+            <div id="slides">
+                <div id="overflow">
+                    <div class="image">
+                        <article><img src="1.jpg"></article>
+                        <article><img src="2.jpg"></article>
+                        <article><img src="3.jpg"></article>
+                        <article><img src="4.jpg"></article>
+                        <article><img src="5.jpg"></article>
+                    </div>
+                </div>
+            </div>
+            <div id="controls">
+                <label for="switch1"></label>
+                <label for="switch2"></label>
+                <label for="switch3"></label>
+                <label for="switch4"></label>
+                <label for="switch5"></label>
+            </div>
+            <div id="active">
+                <label for="switch1"></label>
+                <label for="switch2"></label>
+                <label for="switch3"></label>
+                <label for="switch4"></label>
+                <label for="switch5"></label>
+            </div>
+        </article>
+    </div>
+    <br>
+    <label for="name">Выберите цифру, написанную на изображении, и узаешь что это за мультик!</label>
+    <select id="name">
+        <option value="">...Выберите цифру...</option>
+        <option value="gubka">1</option>
+        <option value="du">2</option>
+        <option value="finesAndFerb">3</option>
+        <option value="graviti">4</option>
+        <option value="kik">5</option>
+    </select>
+    <p></p>
+    <script>
+        var select = document.querySelector('select');
+        var paragraph = document.querySelector('p');
+        select.addEventListener('change', setName);
+
+        function setName() {
+            var choice = select.value;
+            if (choice === 'gubka') {
+                paragraph.textContent = 'НАЗВАНИЕ: Губка Боб Квадратные Штаны.  ' + 'ОПИСАНИЕ: американский мультипликационный сериал, который транслируется на телеканале «Nickelodeon».';
+            }
+            else if (choice === 'du') {
+                paragraph.textContent = 'НАЗВАНИЕ: Скуби-Ду. ' + 'ОПИСАНИЕ: серия мультипликационных сериалов и полнометражных мультфильмов, созданная компанией Hanna-Barbera в 1969 году.';
+            }
+            else if (choice === 'finesAndFerb') {
+                paragraph.textContent = 'НАЗВАНИЕ: Финес и Ферб. ' + 'ОПИСАНИЕ: американский мультипликационный сериал в жанре музыкальной комедии производства Disney Television Animation.';
+            }
+            else if (choice === 'graviti') {
+                paragraph.textContent = 'НАЗВАНИЕ: Гравити Фолз. ' + 'ОПИСАНИЕ: Мультсериал повествует о приключениях близнецов — мальчика Диппера и девочки Мэйбл, которые проводят летние каникулы у двоюродного дедушки Стэна в вымышленном американском городке под названием Гравити Фолз.';
+            }
+            else if (choice === 'kik') {
+                paragraph.textContent = 'НАЗВАНИЕ: Сорвиголова Кик Бутовски. ' + 'ОПИСАНИЕ: Кик Бутовски по натуре экстремальный, неравнодушный, часто добрый, интересный и понимающий.';
+            }else {
+                    paragraph.textContent = '';
+                }
+            }
+    </script>
+</body>
+
+</html>
